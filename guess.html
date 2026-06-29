@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body bgcolor="pink">
+     <style>
+        div{
+            margin: 100px;
+            background: lightskyblue;
+            border: 3px solid;
+            display: inline-block;
+
+        }
+    </style>
+    <center>
+        <div>
+    <h1>GUESS GAME</h1>
+    <input id="box">
+    <button onclick="check()">check</button>
+    <p id="result">YOU ARE RIGHT/WRONG</p>
+    <P id="scr">SCORE:</P>
+    </div>
+    </center>
+   
+    <script>
+        var guessnumber=document.getElementById("box");
+        var result=document.getElementById("result");
+        var score=document.getElementById("scr");
+        var random=Math.floor(Math.random()*10)+1;
+        var scoretotal=10;
+        function check()
+        {
+
+            var enter=guessnumber.value;
+            if(random==enter)
+        {
+            result.textContent="RIGHT";
+            alert("YOU WIN!")
+
+        }
+        else
+        {
+            scoretotal-=1;
+            score.textContent="SCORE:"+scoretotal;
+            result.textContent="WRONG";
+            
+            
+        }
+        }
+    </script>
+</body>
+</html>
